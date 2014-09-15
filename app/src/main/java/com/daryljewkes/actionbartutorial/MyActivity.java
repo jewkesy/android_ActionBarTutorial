@@ -1,5 +1,6 @@
 package com.daryljewkes.actionbartutorial;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,11 +16,15 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.my, menu);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle("Changed Title Text");
+        actionBar.setSubtitle("Modified at Runtime");
+
         return true;
     }
 
